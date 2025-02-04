@@ -6,11 +6,15 @@
     */
 
     //ENTRADA
-
-
+    let userName = prompt(`Nome de usuário:`);
+    let senha = prompt(`Senha:`);
     //PROCESSAMENTO
-
+    while(userName === senha){
+        alert(`ERRO \nNão são aceitas senhas iguais ao nome de usuário.`);
+        userName = prompt(`Nome de usuário:`);
+        senha = prompt(`Senha:`);
+    }
 
     //SAÍDA
-
+    alert(`Nome de usuário: ${userName} \nSenha: ${senha}`);
 </script>

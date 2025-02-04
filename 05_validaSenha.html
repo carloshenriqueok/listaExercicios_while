@@ -6,10 +6,14 @@
     */
 
     //ENTRADA
-
-
+    let senha = Number(prompt(`Informe uma senha de 4 digitos`));
+    let confSenha = Number(prompt(`Confirme sua senha`));
     //PROCESSAMENTO
-
+    while(senha.toString().length != 4 || confSenha.toString().length != 4){
+        alert(`Senha inválida`);
+        senha = Number(prompt(`Informe uma senha de 4 digitos`));
+        confSenha = Number(prompt(`Confirme sua senha`));
+    }
 
     //SAÍDA
 

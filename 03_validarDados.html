@@ -11,11 +11,38 @@
     */
 
     //ENTRADA
-
-
+    let nome = prompt(`Nome Completo:`);
+    let idade = Number(prompt(`Idade:`));
+    let salario = Number(prompt(`Salário`));
+    let sexo = prompt(`Sexo ("f" ou "m")`).toLowerCase();
+    let estadocivil = prompt(`Estado civil ('s', 'c', 'v', 'd')`).toLowerCase();
     //PROCESSAMENTO
-
-
+    while(nome.length <= 3){
+        alert(`O nome deve ter mais que 3 caracteres`);
+        nome = prompt(`Nome Completo:`);
+    }
+    while(idade < 0 || idade > 150){
+        alert(`A idade deve ser maior que 0 e menor que 150`);
+        idade = Number(prompt(`Idade:`));
+    }
+    while(salario <= 0){
+        alert(`O salário deve ser maior que zero`);
+        salario = Number(prompt(`Salário`));
+    }
+    while(sexo !== "f" && sexo !== "m"){
+        alert(`Só são aceitos sexos iguais a "f" ou "m"`);
+        sexo = prompt(`Sexo ("f" ou "m")`).toLowerCase();
+    }
+    while(estadocivil != "s" && estadocivil != "c" && estadocivil != "v" && estadocivil != "d"){
+        alert(`Estado civil inválido`);
+        estadocivil = prompt(`Estado civil ('s', 'c', 'v', 'd')`).toLowerCase();
+    }
     //SAÍDA
-
+    document.write(`
+        Nome: ${nome} <br>
+        Idade: ${idade} anos <br>
+        Salario: R$ ${salario.toFixed(2).replace("." , ",")} <br>
+        Sexo: ${sexo} <br>
+        Estado Civil: ${estadocivil}
+    `);
 </script>
