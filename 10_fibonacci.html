@@ -5,15 +5,15 @@
     */
 
     //ENTRADA
-    let numeros = Number(prompt(`Quantos números a sequência de fibonacci deve possuir`));
-    let fibonacci = [0 , 1];
-    let sequencia = 0;
+    let qntdNum = Number(prompt(`Quantos números a sequência de fibonacci deve possuir`));
+    let fibonacci = [0, 1];
+    let qntdFib = 2;
     //PROCESSAMENTO
-    while(fibonacci.length + 1 === numeros){
-        sequencia = fibonacci[0 - 1] + fibonacci[1 - 2];
+    while(fibonacci.length < qntdNum){
+        let sequencia = fibonacci[qntdFib - 1] + fibonacci[qntdFib - 2];
         fibonacci.push(sequencia);
+        qntdFib++
     }
-    alert(fibonacci)
     //SAÍDA
-    
+    alert(`Sequência de Fibonacci: \n${fibonacci.join(", ")}`)
 </script>

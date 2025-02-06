@@ -8,11 +8,14 @@
     */
 
     //ENTRADA
-
-
+    let number = prompt(`Informe um número para inverter a sua ordem`);
+    let array = number.split("");
+    let inverso = []    
     //PROCESSAMENTO
-
+    while (array.length > 0) {
+        inverso.push(array.pop());
+    }
 
     //SAÍDA
-
+    alert(inverso.join(""))
 </script>

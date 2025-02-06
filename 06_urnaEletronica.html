@@ -34,14 +34,8 @@
     let votosTotais = 0;
     //PROCESSAMENTO
     while(voto != 0){
+   
     votosTotais++
-
-    voto = Number(prompt(`Opções de voto \n 
-    1. Candidato Joãozinho
-    2. Candidato Mariazinha
-    3. Nulo
-    4. Branco \n
-    Entre com o seu voto:`));
 
     if(voto === 1){
         joazinho++
@@ -51,14 +45,22 @@
     }
     else if(voto === 3){
         nulos++
-        porcenNulo = nulos * 100 / votosTotais;
     }
     else{
         branco++
-        porcenBranco = branco * 100 / votosTotais;  
-    }
     }
 
+        voto = Number(prompt(`Opções de voto \n 
+        1. Candidato Joãozinho
+        2. Candidato Mariazinha
+        3. Nulo
+        4. Branco \n
+        Entre com o seu voto:`));
+    }
+
+    let porcenBranco = branco * 100 / votosTotais; 
+    let porcenNulo = nulos * 100 / votosTotais;
+    
     let vencedor = ""
     if(joazinho > mariazinha){
         vencedor = "Joãozinho";
@@ -71,5 +73,5 @@
     }
 
     //SAÍDA
-    document.write(`Joãozinho: ${joazinho} votos <br> Mariazinha: ${mariazinha} votos <br> ${porcenNulo}% de votos nulos <br> ${porcenBranco}% de votos em branco <br> Vencedor: ${vencedor}`);
+    document.write(`Joãozinho: ${joazinho} votos <br> Mariazinha: ${mariazinha} votos <br> ${porcenNulo.toFixed(2)}% de votos nulos <br> ${porcenBranco.toFixed(2)}% de votos em branco <br> Vencedor(a): ${vencedor}`);
 </script>

@@ -13,11 +13,52 @@
     */
 
     //ENTRADA
-    
-
+    let idade = Number(prompt(`Informe a idade do habitante (digite um numero negativo para finalizar)`));
+    let totalSalario = 0;
+    let totalPessoas = 0;
+    let mediaSalarial = 0;
+    let maiorIdade = 0;
+    let menorIdade = 1000;
+    let mulheres = 0;
+    let menorSalario = 1000000000;
+    let idadeSalario = 0;
+    let sexoSalario = "";
     //PROCESSAMENTO
+    while(idade > 0){
+        
+        let salario = Number(prompt(`Salário do habitante`));
+       totalSalario += salario;
+       totalPessoas++
+
+        if(idade > maiorIdade){
+            maiorIdade = idade
+        }
+        if(idade < menorIdade){
+            menorIdade = idade
+        }
 
 
+        let sexo = prompt(`Informe o sexo do habitante (M/F)`).toUpperCase()
+        if(sexo === "f"){
+            mulheres++;
+        }
+
+        if(salario < menorSalario){
+            menorSalario = salario;
+            idadeSalario = idade;
+            sexoSalario = sexo
+        }
+
+        idade = Number(prompt(`Informe a idade do habitante (digite um numero negativo para finalizar)`));
+    }
+
+    mediaSalarial = totalSalario / totalPessoas;
     //SAÍDA
-
+    document.write(`
+    Média Salarial: R$ ${mediaSalarial.toFixed(2).replace("." , ",")} <br>
+    Mais velho possui: ${maiorIdade} anos <br>
+    Mais novo possui: ${menorIdade} anos <br>
+    Quantidade de mulheres da região: ${mulheres} <br>
+    O habitante com menor salário possui ${idadeSalario} anos e é do genero  ${sexoSalario};
+    `)
 </script>
